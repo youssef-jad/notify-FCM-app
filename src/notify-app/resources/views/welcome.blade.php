@@ -4,7 +4,8 @@
 Enjoy Extracting The Classes to Your Own Code Base
 
 <ul>
-    <li> Make Sure You Have / Run Migration to have Devices Table its in simple format </li>
+    <li> Make Sure You Had Run Migration to have Devices Table its in simple format </li>
+    <li> Add Devices Manually to device table </li>
     <li> The FCM depend of Device Model Class Feel Free to tweak it or rename it  </li>
 </ul>
 
