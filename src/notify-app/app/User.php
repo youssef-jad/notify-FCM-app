@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -39,6 +38,6 @@ class User extends Authenticatable
 
     public function devices()
     {
-        return $this->hasMany(Device::class , 'user_id');
+        return $this->hasMany(Device::class, 'user_id');
     }
 }

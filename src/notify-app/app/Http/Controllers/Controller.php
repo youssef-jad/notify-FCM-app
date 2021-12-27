@@ -11,39 +11,37 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 
     public function home()
     {
-        return view('welcome' );
-
+        return view('welcome');
     }
+
     public function toSingleUser()
     {
-        $user = User::first() ;
+        $user = User::first();
         $notifyUser = new FCMFactory($user);
         $notifyUser->title = 'Duck You ';
         $notifyUser->data = [
-            'key' => 'value'
+            'key' => 'value',
         ];
         $result = $notifyUser->notify();
-        return view('welcome' , [ 'data' => $result]);
 
+        return view('welcome', ['data' => $result]);
     }
 
     public function BulkSend()
     {
-
         $bulkNotify = new FCMFactory();
         $bulkNotify->title = 'Surprise Beach !';
         $bulkNotify->data = [
-            'key' => 'value'
+            'key' => 'value',
         ];
         $result = $bulkNotify->notify();
 
-        return view('welcome' , [ 'data' => $result]);
-
-
+        return view('welcome', ['data' => $result]);
     }
 }
