@@ -12,8 +12,8 @@ class AddUsers extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@localhost',
+            'name'     => Str::random(10),
+            'email'    => Str::random(10).'@localhost',
             'password' => Hash::make('123456'),
         ]);
     }
